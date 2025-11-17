@@ -5,13 +5,14 @@ from equation2 import Equation
 from latex2 import Latex
 
 list = []
-for inx in range(200):
-    a = random.randint(0, 10)
+for inx in range(300):
+    a = random.randint(0, 15)
     b = random.randint(0, 10)    
     list = Equation(a, b).get(list)
 
-random.shuffle(list)
+print("Start")
 
+random.shuffle(list)
 nm_eq_per_page = 19 * 3
 latex = Latex()
 with open(latex_file, "w", encoding="utf-8") as f:
@@ -28,3 +29,5 @@ with open(latex_file, "w", encoding="utf-8") as f:
             # f.write(latex.hline + "\n")
         f.write(latex.end_tabular + "\n")
     f.write(latex.end_document + "\n")
+
+print("End")
